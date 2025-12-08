@@ -94,7 +94,10 @@ export const MoreLikeThis = ({
         </div>
         <div className=" gap-8 w-full grid grid-cols-1 sm:grid-cols-5 justify-center items-center pt-8 ">
           {movies.slice(0, 5).map((movie) => (
-            <Skeleton className=" h-[439px] flex flex-col rounded-lg" />
+            <Skeleton
+              key={movie?.id}
+              className=" h-[439px] flex flex-col rounded-lg"
+            />
           ))}
         </div>
       </div>
