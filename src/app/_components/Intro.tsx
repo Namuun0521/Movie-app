@@ -27,7 +27,7 @@ type Response = {
 export const Intro = () => {
   const [genres, setgenres] = useState<Genre[]>([]);
   const { setTheme, theme } = useTheme();
-
+  //k
   const searchParams = useSearchParams();
 
   const genreIds = searchParams.get("genreIds")?.split(",") || [];
