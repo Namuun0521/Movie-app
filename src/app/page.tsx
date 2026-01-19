@@ -1,9 +1,5 @@
-import Image from "next/image";
 import { Intro } from "./_components/Intro";
 import { Carouselx } from "./_components/Carousexl";
-import { Upcoming } from "./_components/Upcoming";
-import { Popular } from "./_components/Popular";
-import { TopRated } from "./_components/TopRated";
 import { Footer } from "./_components/Footer";
 import { MovieSection } from "./_components/MovieSection";
 

@@ -14,7 +14,7 @@ type MovieSectionProps = {
 
 export type Movie = {
   adult: boolean;
-  backdrop_patch: string;
+  backdrop_path: string;
   genre_ids: number[];
   id: number;
   original_language: string;
@@ -54,7 +54,7 @@ export const MovieSection = (props: MovieSectionProps) => {
                 "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNGEzNzg5MTlmNDZjZjgwYmNhNDZkMThiYTY2NzQ0MiIsIm5iZiI6MTc2MzUyMzY0Mi43NTEwMDAyLCJzdWIiOiI2OTFkM2MzYTYyYTA5ZGE0NmQ3YWQ2ZDYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.HZMwjz4_eYyA0XA28jMAQt2UFvsMXnmYm0DFdEFLGMk",
               accept: "application/json",
             },
-          }
+          },
         );
 
         const data = (await res.json()) as Response;
