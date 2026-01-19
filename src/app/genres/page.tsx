@@ -15,7 +15,9 @@ export default function Genre() {
           <div className="w-[387px] h-[352px]">
             <GenreList />
           </div>
-          <FilteredMovies />
+          <div>
+            <FilteredMovies />
+          </div>
         </div>
       </div>
       <Footer />

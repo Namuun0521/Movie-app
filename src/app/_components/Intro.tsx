@@ -1,20 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Command, CommandInput } from "@/components/ui/command";
-import { Label } from "@/components/ui/label";
+
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@/components/ui/popover";
-import { Badge, ChevronDown, ChevronRight } from "lucide-react";
-import { Genres } from "./Genres";
+import { ChevronDown } from "lucide-react";
+
 import { useEffect, useState } from "react";
 import { SearchSection } from "./SearchSection";
 import { ModeToggle } from "./ModeToggle";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useTheme } from "next-themes";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+
 import GenreList from "./GenreList";
+import { useTheme } from "next-themes";
 
 export type Genre = {
   id: number;
@@ -29,9 +29,10 @@ export const Intro = () => {
   const { setTheme, theme } = useTheme();
 
   const searchParams = useSearchParams();
+
   const genreIds = searchParams.get("genreIds")?.split(",") || [];
   console.log("aaaaA", genreIds);
-  const pathname = usePathname();
+
   const router = useRouter();
 
   const handleClickGenre = (genreId: string) => {
@@ -56,7 +57,7 @@ export const Intro = () => {
                 "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNGEzNzg5MTlmNDZjZjgwYmNhNDZkMThiYTY2NzQ0MiIsIm5iZiI6MTc2MzUyMzY0Mi43NTEwMDAyLCJzdWIiOiI2OTFkM2MzYTYyYTA5ZGE0NmQ3YWQ2ZDYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.HZMwjz4_eYyA0XA28jMAQt2UFvsMXnmYm0DFdEFLGMk",
               accept: "application/json",
             },
-          }
+          },
         );
         const data = (await res.json()) as Response;
         setgenres(data.genres);
