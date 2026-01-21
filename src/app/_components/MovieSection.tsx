@@ -98,11 +98,15 @@ export const MovieSection = (props: MovieSectionProps) => {
         </Link>
       </div>
       <div className=" gap-8 w-full grid grid-cols-1 sm:grid-cols-5 justify-center items-center pt-8 ">
-        {movies.slice(0, 10).map((movie) => (
+        {movies?.slice(0, 10)?.map((movie) => (
           <Cardbox
             key={movie.id}
             id={movie.id}
-            image={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+            image={
+              movie.poster_path
+                ? "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+                : "/placeholder.png"
+            }
             score={movie.vote_average}
             mname={movie.title}
           />

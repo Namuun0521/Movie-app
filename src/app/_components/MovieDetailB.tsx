@@ -70,7 +70,7 @@ export const MovieDetailB = ({ movieId }: { movieId: string }) => {
                 "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNGEzNzg5MTlmNDZjZjgwYmNhNDZkMThiYTY2NzQ0MiIsIm5iZiI6MTc2MzUyMzY0Mi43NTEwMDAyLCJzdWIiOiI2OTFkM2MzYTYyYTA5ZGE0NmQ3YWQ2ZDYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.HZMwjz4_eYyA0XA28jMAQt2UFvsMXnmYm0DFdEFLGMk",
               accept: "application/json",
             },
-          }
+          },
         );
 
         const data = await res.json();
@@ -145,7 +145,11 @@ export const MovieDetailB = ({ movieId }: { movieId: string }) => {
       </div>
       <div className="overflow-hidden flex justify-between">
         <img
-          src={"https://image.tmdb.org/t/p/w500/" + movie?.poster_path}
+          src={
+            movie?.poster_path
+              ? "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+              : "/placeholder.png"
+          }
           alt=""
           className="w-[290px] h-[428px] mr-8"
         />

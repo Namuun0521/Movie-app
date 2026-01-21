@@ -87,7 +87,9 @@ export const Carouselx = () => {
                   </h1>
                   <div className="flex gap-1 text-center items-center pb-4">
                     <img alt="" src="/Star.png" className="h-7 w-7" />
-                    <div className="text-white">{el.vote_average}/10</div>
+                    <div className="text-white">
+                      {Math.round(el.vote_average * 10) / 10} / 10
+                    </div>
                   </div>
                   <div className="text-white text-xs h-20 w-[302px] pb-4">
                     {el.overview}

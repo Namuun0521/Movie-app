@@ -73,8 +73,10 @@ export const FilteredMovies = () => {
                   <img
                     className="h-[340px] w-full rounded-t-lg"
                     src={
-                      "https://image.tmdb.org/t/p/w500/" +
                       filtermovie.poster_path
+                        ? "https://image.tmdb.org/t/p/w500/" +
+                          filtermovie.poster_path
+                        : "/placeholder.png"
                     }
                   ></img>
                   <div className="flex gap-2 py-2 px-2 items-center">

@@ -27,7 +27,7 @@ export default function GenreList({ path = "" }: { path?: string }) {
     params.set("genreIds", updatedGenreIds.join(","));
     console.log(pathname + path);
 
-    router.push("/" + path + "?" + params);
+    router.push(pathname + "?" + params.toString());
   };
 
   useEffect(() => {

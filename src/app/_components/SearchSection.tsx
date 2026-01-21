@@ -32,7 +32,7 @@ export const SearchSection = () => {
               "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNGEzNzg5MTlmNDZjZjgwYmNhNDZkMThiYTY2NzQ0MiIsIm5iZiI6MTc2MzUyMzY0Mi43NTEwMDAyLCJzdWIiOiI2OTFkM2MzYTYyYTA5ZGE0NmQ3YWQ2ZDYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.HZMwjz4_eYyA0XA28jMAQt2UFvsMXnmYm0DFdEFLGMk",
             accept: "application/json",
           },
-        }
+        },
       );
       const data = await res.json();
       console.log(data.results, "kkkkkkkk");
@@ -47,7 +47,7 @@ export const SearchSection = () => {
         <div
           className={cn(
             "px-3 mr-3 w-100 rounded-lg border shadow-md md:min-w-[379px] ml-4 h-9 flex flex-row gap-2 text-center justify-center items-center",
-            open && "opacity-0 "
+            open && "opacity-0 ",
           )}
         >
           <Search strokeWidth={2} color="#5c6466" size={20} />
@@ -79,7 +79,11 @@ export const SearchSection = () => {
               <MovieSearchCard
                 key={movie.id}
                 id={movie.id}
-                image={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                image={
+                  movie.poster_path
+                    ? "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+                    : "/placeholder.png"
+                }
                 score={movie.vote_average}
                 mname={movie.title}
                 release_date={movie.release_date}
