@@ -18,16 +18,33 @@ export default function GenreList({ path = "" }: { path?: string }) {
   const pathname = usePathname();
   const router = useRouter();
 
+  // const handleClickGenre = (genreId: string) => {
+  //   const params = new URLSearchParams(searchParams.toString());
+
+  //   const updatedGenreIds = genreIds?.includes(genreId)
+  //     ? genreIds.filter((id) => id !== genreId)
+  //     : [...genreIds, genreId];
+  //   params.set("genreIds", updatedGenreIds.join(","));
+  //   console.log(pathname + path);
+
+  //   router.push(pathname + "?" + params.toString());
+  // };
   const handleClickGenre = (genreId: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
     const updatedGenreIds = genreIds?.includes(genreId)
       ? genreIds.filter((id) => id !== genreId)
       : [...genreIds, genreId];
-    params.set("genreIds", updatedGenreIds.join(","));
-    console.log(pathname + path);
 
-    router.push(pathname + "?" + params.toString());
+    if (updatedGenreIds.length === 0) {
+      params.delete("genreIds");
+    } else {
+      params.set("genreIds", updatedGenreIds.join(","));
+    }
+
+    const targetPath = path ? "/" + path : pathname;
+
+    router.push(`${targetPath}?${params.toString()}`, { scroll: false });
   };
 
   useEffect(() => {
