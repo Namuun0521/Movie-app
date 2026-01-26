@@ -67,7 +67,7 @@ export default function GenreList({ path = "" }: { path?: string }) {
     getGenre();
   }, []);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-[387px]">
       <p className="text-2xl font-semibold">Genres</p>
       <p>See lists of movies by genre</p>
       <div className="w-full flex flex-wrap gap-4 my-4">

@@ -137,7 +137,9 @@ export const MovieDetailB = ({ movieId }: { movieId: string }) => {
           <div className=" py-2 px-2">
             <div className=" gap-1 text-center items-center flex">
               <img alt="icon" src="/Star.png" className="h-7 w-6" />
-              <div className=" font-semibold">{movie?.vote_average}/10</div>
+              <div className=" font-semibold">
+                {Math.round((movie?.vote_average ?? 0) * 10) / 10}/10
+              </div>{" "}
             </div>
             <div className="flex text-xs pl-7 text-gray-500">{popularity}k</div>
           </div>

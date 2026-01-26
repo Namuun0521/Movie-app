@@ -68,10 +68,10 @@ export const FilteredMovies = () => {
               <Link key={filtermovie.id} href={`/movie/${filtermovie.id}`}>
                 <div
                   key={filtermovie.id}
-                  className="h-[439px] bg-[#F4F4F5] dark:bg-[#27272A] flex flex-col rounded-lg"
+                  className=" w-[165px] h-[331px] bg-[#F4F4F5] dark:bg-[#27272A] flex flex-col rounded-lg pb-10"
                 >
                   <img
-                    className="h-[340px] w-full rounded-t-lg"
+                    className="h-[244px]  w-full rounded-t-lg"
                     src={
                       filtermovie.poster_path
                         ? "https://image.tmdb.org/t/p/w500/" +
@@ -81,7 +81,9 @@ export const FilteredMovies = () => {
                   ></img>
                   <div className="flex gap-2 py-2 px-2 items-center">
                     <img src="/star.png" className="h-4 w-4" />
-                    <p className="">{filtermovie.vote_average}/10</p>
+                    <p className="">
+                      {Math.round(filtermovie.vote_average * 10) / 10}/10
+                    </p>
                   </div>
                   <p className="px-2">{filtermovie.title}</p>
                 </div>

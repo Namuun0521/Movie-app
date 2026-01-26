@@ -19,13 +19,15 @@ export const MovieSearchCard = (props: MovieSearchCardProps) => {
         <img
           alt="photo"
           src={props.image}
-          className="h-[100px] w-[67px] rounded-lg"
+          className="h-[244px] w-[165px] rounded-lg"
         />
         <div className="py-2 px-2">
           <div className="text-xl font-semibold">{props.mname}</div>
           <div className="flex gap-1 text-center items-center">
             <img alt="icon" src="/Star.png" className="h-4 w-4 rounded-lg" />
-            <div className="text-gray-500 text-sm">{props.score}/10</div>
+            <div className="text-gray-500 text-sm">
+              {Math.round(props.score * 10) / 10}/10
+            </div>
           </div>
           <div className="pt-3">
             <div className=" text-sm">

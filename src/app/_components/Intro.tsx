@@ -15,6 +15,7 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 import GenreList from "./GenreList";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export type Genre = {
   id: number;
@@ -69,7 +70,9 @@ export const Intro = () => {
   }, []);
   return (
     <div className="h-9 w-screen flex justify-center  text-center items-center my-[11.5px] px-20">
-      <img alt="logo" src="/Logo.png" className="w-[92px] h-5 mr-[332px]" />
+      <Link href="/">
+        <img alt="logo" src="/Logo.png" className="w-[92px] h-5 mr-[332px]" />
+      </Link>
       <Popover>
         <PopoverTrigger className="flex" asChild>
           <Button variant="outline">
@@ -77,7 +80,7 @@ export const Intro = () => {
             Genre
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-144.25 ">
+        <PopoverContent className="w-[450px]  ">
           <GenreList path="genres" />
         </PopoverContent>
       </Popover>
